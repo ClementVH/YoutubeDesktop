@@ -706,7 +706,7 @@ var AuthService = (function () {
         url += '&' + 'response_type=' + this.response_type;
         url += '&' + 'scope=' + this.scope;
         url += '&' + 'state=' + btoa(next_url);
-        // location.href = url;
+        location.href = url;
     };
     return AuthService;
 }());

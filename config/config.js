@@ -1,4 +1,4 @@
 conf = {
 	"prod": true,
-	"path": "http://youdesk.herokuapp.com"
+	"path": "https://youdesk.herokuapp.com"
 }
