@@ -158,7 +158,7 @@ server.route({
 
 			function saveToken(error, result) {
 				if (error)
-					console.log('Access Token Error', error);
+					console.log('Access Token Error', error, result);
 
 				if(req.query.state == undefined)
 					res.redirect('/').state("access_token", result.access_token);
