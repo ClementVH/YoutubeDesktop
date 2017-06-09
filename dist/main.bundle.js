@@ -655,7 +655,7 @@ StatusService = __decorate([
 
 /***/ }),
 
-/***/ 214:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(92);
@@ -699,13 +699,14 @@ var AuthService = (function () {
     AuthService.prototype.redirectToAuth = function (next_url) {
         var redirect_uri = location.protocol + '//' + location.host;
         redirect_uri += location.pathname + 'token';
+        console.log(redirect_uri);
         var url = this.url;
         url += '?' + 'client_id=' + this.client_id;
         url += '&' + 'redirect_uri=' + redirect_uri;
         url += '&' + 'response_type=' + this.response_type;
         url += '&' + 'scope=' + this.scope;
         url += '&' + 'state=' + btoa(next_url);
-        location.href = url;
+        // location.href = url;
     };
     return AuthService;
 }());
@@ -1148,5 +1149,5 @@ var _a, _b, _c, _d, _e, _f, _g;
 
 /***/ })
 
-},[214]);
+},[215]);
 //# sourceMappingURL=main.bundle.js.map
