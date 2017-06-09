@@ -149,6 +149,8 @@ server.route({
 
 			var redirect_uri = conf.path + '/authCallback';
 
+			console.log(redirect_uri);
+
 			oauth2.authCode.getToken({
 				code: code,
 				redirect_uri: redirect_uri
