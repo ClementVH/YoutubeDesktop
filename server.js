@@ -147,7 +147,7 @@ server.route({
 
 			var code = req.query.code;
 
-			var redirect_uri = conf.path + '/authCallback';
+			var redirect_uri = conf.path + '/token';
 
 			console.log(redirect_uri);
 

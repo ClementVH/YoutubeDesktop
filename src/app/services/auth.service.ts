@@ -25,6 +25,8 @@ export class AuthService {
 
 		redirect_uri += location.pathname + 'token';
 
+		console.log(redirect_uri);
+
 		let url = this.url;
 		url += '?' + 'client_id=' + this.client_id;
 		url += '&' + 'redirect_uri=' + redirect_uri;
@@ -32,7 +34,7 @@ export class AuthService {
 		url += '&' + 'scope=' + this.scope;
 		url += '&' + 'state=' + btoa(next_url);
 
-		location.href = url;
+		// location.href = url;
 
 	}
 
