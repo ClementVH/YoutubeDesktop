@@ -5,10 +5,22 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ChannelComponent } from './channel/channel.component';
+import { ContextualComponent } from './contextual/contextual.component';
+import { NotifComponent } from './notif/notif.component';
+import { QueryComponent } from './query/query.component';
+import { ThumbnailComponent } from './thumbnail/thumbnail.component';
+import { VideoControlComponent } from './video-control/video-control.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChannelComponent,
+    ContextualComponent,
+    NotifComponent,
+    QueryComponent,
+    ThumbnailComponent,
+    VideoControlComponent
   ],
   imports: [
     BrowserModule,

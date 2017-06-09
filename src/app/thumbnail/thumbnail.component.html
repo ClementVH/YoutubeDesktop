@@ -1,0 +1,17 @@
+<div *ngIf="!isPlaylist()" class="video-ctn">
+	<div class="thumbnail-ctn">
+		<span>
+			<img (click)="clickThumbnail()" src="{{getImage()}}" [style]="safeStyle">
+		</span>
+	</div>
+
+	<div class="infos-ctn">
+
+		<div class="video-title">{{video.snippet.title}}</div>
+
+		<div *ngIf="isVideo()" class="channel-title">{{video.snippet.channelTitle}}</div>
+
+		<div *ngIf="isVideo()" class="video-infos">{{video.snippet.publishedAt | date}}, {{video.snippet.publishedAt | date: 'HH:mm'}}</div>
+
+	</div>
+</div>

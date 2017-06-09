@@ -1,4 +1,42 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<div id="loading-ctn" *ngIf="status.spinnerOn">
+
+	<div id="loading"></div>
+
+</div>
+
+<div class="row navbar text-center">
+
+	<div class="shrink columns">
+		<button class="navbar-btn context-btn" (click)="clickMenu()"></button>
+	</div>
+
+	<div [hidden]="status.showInput" class="columns brand">Youdesk</div>
+
+	<div [hidden]="!status.showInput" class="columns no-padding relative">
+		<input #navInput class="nav-input" type="search" [(ngModel)]="youtubeQuery" name="name" (click)="clickInput()" (ngModelChange)="getSuggests()" (keypress)="handleInputKeyPress($event)" autocomplete="off">
+
+		<div *ngIf="status.suggestsOpen" class="suggests text-left">
+			<div *ngFor="let suggest of suggests[youtubeQuery]" class="suggest" (click)="completeYoutubeQuery(suggest)">
+				{{suggest}}
+			</div>
+		</div>
+
+	</div>
+
+	<div class="shrink columns">
+		<button (click)="clickSearch()" class="navbar-btn search-btn"></button>
+	</div>
+
+	<contextual class="text-left"></contextual>
+
+</div>
+
+<div (click)="clickCore()" id="core" class="columns">
+
+	<router-outlet></router-outlet>
+
+</div>
+
+<notif></notif>
+
+<video-ctrl></video-ctrl>

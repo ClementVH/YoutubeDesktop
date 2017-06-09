@@ -1,0 +1,443 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "deps/foundation/css/foundation.css";
+
+$searchFormW : 180px
+$inputWidth : 252px
+$inputHeight : 36px
+$btnSize : 24px
+$navbarH : 50px
+
+
+button, input
+	outline: none !important
+	-webkit-appearance: none !important
+	border:
+		style: none
+		width: 0px
+	background:
+		color: transparent
+	padding: 0px
+
+.no-padding
+	padding: 0
+
+.relative
+	position: relative
+
+body
+	background:
+		color: #282828
+	overflow: hidden
+
+::-webkit-scrollbar
+    width: 0px
+    background: transparent
+
+::-webkit-scrollbar-thumb
+    background: #FF0000
+
+#core
+	height: calc(100vh - 50px)
+	overflow-y: scroll
+	padding-top: 10px
+	width: 100%
+
+#btn
+	width: $btnSize
+	height: 100%
+	background:
+		size: $btnSize $btnSize
+	height: $btnSize
+	margin: ($navbarH - $btnSize)/2 0
+
+.navbar
+	background:
+		color: #333
+	height: 50px
+	border: 0
+	margin: 0
+
+	color: #d8d8d8
+
+	.brand
+		font-size: 30px
+
+	.navbar-btn
+		width: $btnSize
+		height: 100%
+		background:
+			repeat: no-repeat
+			size: 24px
+
+	.context-btn
+		background:
+			position: left
+			image: url('assets/img/Nav-icon.png')
+
+	.search-btn
+		background:
+			position: right
+			image: url('assets/img/Search-icon.png')
+
+
+	.nav-input
+		width: 100%
+		height: $inputHeight
+
+		background:
+			color: #707070 !important
+
+		border:
+			radius: 0px
+			style: none
+
+		color: #d8d8d8
+		font-size: 18px
+
+		height: $inputHeight
+
+		margin:
+			top: ($navbarH - $inputHeight)/2
+			bottom: ($navbarH - $inputHeight)/2
+
+		&:focus
+			box-shadow: none !important
+
+	.suggests
+		position: absolute
+		width: 100%
+		top: calc(100% - 7px)
+		left: 0px
+		background-color: #707070
+		border-top: 1px solid #333
+		cursor: pointer
+
+		.suggest
+			padding:
+				left: 8px
+				right: 10px
+			font-size: 18px
+
+			&:hover
+				background-color: rgba(0,0,0,0.3)
+
+
+	contextual
+		z-index: 2
+		position: absolute
+		top: 50px
+		left: 0px
+		background: #383838
+		overflow: auto
+		max-height: calc(100vh - 100px)
+
+		.context-ctn
+			min-height: 36px
+			width: 210px
+			padding:
+				left: 10px
+				top: 1px
+				bottom: 1px
+				right: 10px
+
+			.context-title
+				cursor: pointer
+				line-height: 22px
+				font-size: 18px
+				display: block
+				color: #d8d8d8
+				margin:
+					top: 7px
+					bottom: 7px
+
+			.context-content
+				height: 28px
+				padding:
+					left: 5px
+
+				span
+					float: left
+
+					img
+						height: 22px
+						width: 22px
+
+				.content-title
+					line-height: 22px
+					font-size: 17px
+					margin-left: 22px + 5px
+					color: #d8d8d8
+					overflow: hidden
+					max-height: 22px
+					cursor: pointer
+
+		.context-border
+			width: 80%
+			height: 1px
+			border:
+				top: solid 1px #c30202
+			margin: 0 10%
+
+#videos_ctn
+	min-height: 580px
+
+	#notifs-ctn
+		position: fixed
+		bottom: 10px
+		left: 10px
+		width: 60%
+
+		.notif-ctn
+			background:
+				color: #333
+			margin: 5px 0 0 0
+			padding: 5px 10px 10px 10px
+			border: solid 2px #4081F5
+
+			h3
+				margin: 0px
+				color: #FD971F
+
+			h6
+				line-height: 14px
+				font-size: 14px
+				max-height: 28px
+				overflow: hidden
+				margin-top: 3px
+				margin-bottom: 0px
+				color: #fff
+
+
+
+.video-ctn
+	height: 80px
+
+	margin:
+		bottom: 10px
+
+	.thumbnail-ctn
+		height: 100%
+		width: 132px
+		float: left
+
+		span
+			float: right
+
+			img
+				width: 132px
+				height: 74px
+
+	.infos-ctn
+		height: 100%
+		margin-left: 132px
+		position: relative
+
+		padding:
+			left: 10px
+		line-height: 14px
+
+		.video-title
+			color: #66D9EF
+			font-size: 16px
+			line-height: 16px
+			max-height: 32px
+			overflow: hidden
+
+		.channel-title
+			color: #FD971F
+			margin-top: 2px
+			line-height: 18px
+			font-size: 14px
+
+		.video-infos
+			color: #A6E22E
+			line-height: 20px
+			font-size: 12px
+
+@-webkit-keyframes openVC
+	from
+		height: 0px
+	to
+		height: 75px
+
+@-moz-keyframes openVC
+	from
+		height: 0px
+	to
+		height: 75px
+
+.openVC
+	-webkit-animation: openVC 0.6s linear
+	-moz-animation: openVC 0.6s linear
+
+#video-ctrl-ctn
+	position: fixed
+	bottom: 0px
+	left: 0px
+	width: 100%
+	padding: 10px
+		top: 0px
+		bottom: 0px
+
+
+	#video-ctrl
+		height: 100%
+		width: 100%
+		padding: 10px
+		padding-bottom: 0px
+		background-color: #444
+
+		#play-pause-btn
+			float: left
+			display: inline-block
+			width: 60px
+			height: 40px
+			background:
+				color: transparent
+				image: url("assets/img/PlayPause-icon.png")
+				size: 100%
+				repeat: no-repeat
+				position: center
+
+		#volume-ctn
+			float: left
+			width: calc(100% - 60px)
+			height: 40px
+			padding: 5px 0px
+
+			.volume-btn
+				float: left
+				height: 30px
+				width: 30px
+				margin: 0 5px
+				background:
+					color: transparent
+					size: 100%
+					repeat: no-repeat
+					position: center
+
+			.volume-up-btn
+				background:
+					image: url("assets/img/Plus-icon.png")
+
+			.volume-down-btn
+				background:
+					image: url("assets/img/Minus-icon.png")
+
+			.volume-back
+				position: relative
+				float: left
+				width: calc(100% - 80px)
+				height: 30px
+				background-color: #555
+				z-index: 0
+
+				.volume-front
+					position: relative
+					top: 0px
+					left: 0px
+					width: 0%
+					height: 100%
+					background-color: #66D9EF
+					z-index: 1
+
+		#fullscreen-btn
+			width: 60px
+			height: 40px
+			background:
+				color: transparent
+				image: url("assets/img/Fullscreen-icon.png")
+				size: 100%
+				repeat: no-repeat
+				position: center
+
+		#timeline-ctn
+			width: calc(100% - 70px)
+			height: 15px
+			margin-top: 10px
+			padding-top: 5px
+			float: right
+
+			#timeline-back
+				position: relative
+				width: 100%
+				height: 100%
+				background-color: #555
+
+				#timeline-front
+					position: relative
+					top: 0
+					left: 0
+					height: 100%
+					background-color: #fd971f
+
+#video-ctrl-btn-ctn
+	position: fixed
+	bottom: 10px
+	right: 10px
+	width: 54px
+	height: 54px
+	background-color: #282828
+	border: 2px solid #A6E22E
+		radius: 54px
+
+	#video-ctrl-btn
+		width: 100%
+		height: 100%
+		margin-left: 2px
+		background:
+			color: transparent
+			repeat: no-repeat
+			size: 31px
+			position: center
+			image: url("assets/img/Play-icon.png")
+
+
+///////////////////// LOADING
+#loading-ctn
+	position: fixed
+	width: 100%
+	height: 100vh
+	background-color: rgba(2, 2, 2, 0.5)
+	z-index: 10
+
+/* Animation */
+@-webkit-keyframes loading
+	to
+		-webkit-transform: rotate(360deg)
+
+@-moz-keyframes loading
+	to
+		-moz-transform: rotate(360deg)
+
+@-ms-keyframes loading
+	to
+		-ms-transform: rotate(360deg)
+
+@keyframes loading
+	to
+		transform: rotate(360deg)
+
+
+/* Loader (*/
+#loading
+
+	position: fixed
+	top: calc(50% - 20px)
+	left: calc(50% - 20px)
+
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	background: transparent
+
+	border-top: 4px solid #fff
+	border-right: 4px solid #fff
+	border-bottom: 4px solid #777
+	border-left: 4px solid #777
+
+	-webkit-animation: loading 1.2s infinite linear
+	-moz-animation: loading 1.2s infinite linear
+	-ms-animation: loading 1.2s infinite linear
+	animation: loading 1.2s infinite linear

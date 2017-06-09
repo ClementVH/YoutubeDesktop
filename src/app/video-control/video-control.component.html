@@ -1,0 +1,37 @@
+<div #test id="video-ctrl-ctn" [hidden]="!status.videoCtrlOpen">
+
+	<div id="video-ctrl">
+
+		<button (click)="toggleVideoState()" id="play-pause-btn"></button>
+
+		<div id="volume-ctn">
+
+			<button (click)="decrVolume()" class="volume-down-btn volume-btn"></button>
+
+			<div class="volume-back">
+				<div #volume class="volume-front"></div>
+			</div>
+
+			<button (click)="incrVolume()" class="volume-up-btn volume-btn"></button>
+
+		</div>
+
+		<button (click)="toggleFullscreen()" id="fullscreen-btn"></button>
+
+		<div id="timeline-ctn">
+
+			<div #timeline (click)="setCurrentTime($event)" id="timeline-back">
+				<div #timelineFront id="timeline-front"></div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<div id="video-ctrl-btn-ctn" [hidden]="status.videoCtrlOpen">
+
+	<button (click)="showVideoCtrl()" id="video-ctrl-btn"></button>
+
+</div>

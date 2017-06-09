@@ -1,0 +1,25 @@
+<div *ngIf="status.contextualOpen">
+
+	<div class="context-ctn">
+
+		<div class="context-title">Latest</div>
+
+	</div>
+
+	<div class="context-border"></div>
+
+	<div class="context-ctn">
+
+		<div class="context-title">Subscriptions</div>
+
+		<div *ngFor="let sub of yt.subs" class="context-content">
+
+			<span><img src="{{sub.snippet.thumbnails.default.url}}"></span>
+
+			<div (click)="searchChannel(sub.snippet.resourceId.channelId, sub.snippet.title)" class="content-title">{{sub.snippet.title}}</div>
+
+		</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,1 @@
+var sockets = module.exports = {};

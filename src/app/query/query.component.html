@@ -1,0 +1,9 @@
+<div *ngIf="youtubeService.videos" id="videos_ctn">
+
+	<ng-template ngFor let-video [ngForOf]="youtubeService.videos">
+
+		<thumbnail [video]="video"></thumbnail>
+
+	</ng-template>
+
+</div>

@@ -1,0 +1,11 @@
+{
+	"prod": true,
+	"path": "http://youdesk.herokuapp.com",
+	"oauth" : {
+		"clientID": "42957678009-9ohuunq6oagrf8jd6m1pem2d3arr6dke.apps.googleusercontent.com",
+		"clientSecret": "Eb0vMZ3aO-4BMn5YOpMHNoYe",
+		"site": "https://accounts.google.com/o",
+		"tokenPath": "/oauth2/token",
+		"authorizationPath": "/oauth/authorize"
+	}
+}
