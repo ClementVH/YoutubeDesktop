@@ -132,6 +132,14 @@ server.state('access_token', {
 
 server.route({
 	method: 'GET',
+	path: '/authCallback',
+	handler: (req, res) => {
+		res("Hello");
+	}
+});
+
+server.route({
+	method: 'GET',
 	path: '/token',
 	handler: (req, res) => {
 
@@ -139,7 +147,7 @@ server.route({
 
 			var code = req.query.code;
 
-			var redirect_uri = conf.path + '/token';
+			var redirect_uri = conf.path + '/authCallback';
 
 			oauth2.authCode.getToken({
 				code: code,
