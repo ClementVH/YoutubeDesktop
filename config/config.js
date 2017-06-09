@@ -1,4 +1,4 @@
 conf = {
-	"prod": false,
-	"path": "http://localhost:3000"
+	"prod": true,
+	"path": "http://youdesk.herokuapp.com"
 }
